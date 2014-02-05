@@ -1,6 +1,8 @@
 body {
 	background: #FFF;
 	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
 	}
 	
 	h1, h2 {
@@ -16,6 +18,4 @@ body {
 	ol.poem {
 	    list-style:none;
 	    position:center;
-	    font-family: 'Roboto', sans-serif;
-		font-weight: normal;
     } 
