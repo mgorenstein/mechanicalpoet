@@ -2,3 +2,4 @@ name: The Mechanical Poet
 markdown: redcarpet
 pygments: true
 baseurl: /mechanicalpoet
+exclude: [sentence_process]
