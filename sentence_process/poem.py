@@ -22,12 +22,16 @@ class Poem:
 			print title
 			print author
 			if (title == None):
-			    title = ''
+				title = ''
 			if (author == None):
-			    author = 'Unknown'
+				author = 'Unknown'
 			blurb = title + ' by ' + author
 			print blurb
 			html+= "<li><span class='hint--info hint--right' data-hint='" + blurb + "'>" + text + "</span></li>\n"
-			
-		with io.open("2.html", 'w', encoding='utf8') as the_file:
+		
+		with open('../mechanicalpoet/', 'r') as f:
+			first_line = f.readline()
+			number = filter(str.isdigit, first_line)
+
+		with io.open("../mechanicalpoet/poems/" + number + ".html", 'w', encoding='utf8') as the_file:
 			the_file.write(html)
