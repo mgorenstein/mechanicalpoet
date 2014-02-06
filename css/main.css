@@ -19,3 +19,7 @@ body {
 	    list-style:none;
 	    position:center;
     } 
+    
+    a {
+        text-decoration: none; /* no underline */
+    }

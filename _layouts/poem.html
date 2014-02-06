@@ -6,3 +6,6 @@ layout: default
 <h2> {{ page.title }} </h2>
 {{ content }}
 </ol>
+
+<a href={{ site.baseurl }}/poetry/{% if page.title > 1 %}{{ page.title | minus: 1}}{% else %}1{% endif %}.html>&#8592;</a>
+<a href={{ site.baseurl }}/poetry/{% if page.title < site.data.count.count %}{{ page.title | plus: 1}}{% else %}1{% endif %}.html>&#8594;</a>
