@@ -14,24 +14,26 @@ class Poem:
 			print line.text
 	
 	def make_html(self):
-		html = "---\nlayout: poem\ntitle: 2\n---\n"
+	
+		with open('count.yaml', 'r') as f:
+			first_line = f.readline()
+			number = int(filter(str.isdigit, first_line)) + 1
+			
+		html = "---\nlayout: poem\ntitle:" + str(number) + "\n---\n"
 		for line in self.poem:
 			text = line.text
 			title = line.book_info['title']
 			author = line.book_info['creator']['full_name']
-			print title
-			print author
 			if (title == None):
 				title = ''
 			if (author == None):
 				author = 'Unknown'
 			blurb = title + ' by ' + author
-			print blurb
 			html+= "<li><span class='hint--info hint--right' data-hint='" + blurb + "'>" + text + "</span></li>\n"
-		
-		with open('../mechanicalpoet/', 'r') as f:
-			first_line = f.readline()
-			number = filter(str.isdigit, first_line)
 
-		with io.open("../mechanicalpoet/poems/" + number + ".html", 'w', encoding='utf8') as the_file:
+		with io.open("poems/" + str(number) + ".html", 'a+', encoding='utf-8') as the_file:
 			the_file.write(html)
+		
+		with open('count.yaml', 'w') as f:
+			toWrite = 'count: ' + str(number)
+			f.write(toWrite)
