@@ -14,12 +14,23 @@ body {
 	    color: #0041C2;
 	    font-style: italic;
 	}
-	
-	ol.poem {
+    
+    a {
+        text-decoration: none; /* no underline */
+    }
+    
+    ol.poem {
 	    list-style:none;
 	    position:center;
     } 
     
-    a {
-        text-decoration: none; /* no underline */
+    div.about {
+        position: relative;
+        /* center the element */
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        /* give it dimensions */
+        width: 50%;
     }
